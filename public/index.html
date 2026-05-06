@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>URL Scraper</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>URL Scraper</h1>
+    <p class="sub">Paste a page URL to extract its title, description, and all images.</p>
+    <form id="form" class="row" autocomplete="off">
+      <input
+        id="url"
+        type="url"
+        required
+        placeholder="https://example.com/page"
+        spellcheck="false"
+      />
+      <button id="go" type="submit">Fetch</button>
+    </form>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+  </header>
+
+  <main id="results" class="results" hidden>
+    <section class="meta">
+      <h2 id="r-title"></h2>
+      <p id="r-desc" class="desc"></p>
+      <ul id="r-details" class="details-list"></ul>
+      <ul id="r-meta" class="meta-list"></ul>
+    </section>
+
+    <section>
+      <div class="meta-bar">
+        <h3>Images <span id="r-count" class="badge">0</span></h3>
+        <button id="dl-all" type="button" class="btn-secondary" hidden>Download all</button>
+      </div>
+      <div class="gallery-card">
+        <div id="gallery" class="gallery"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
